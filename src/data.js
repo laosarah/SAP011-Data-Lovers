@@ -1,9 +1,38 @@
-// estas funciones son de ejemplo
+function mostrarPosterOrdenado(value,listaDeFilmes) {
+  const ordenacaoSelecionada = [...listaDeFilmes];
+  if (value === "1984-2023") {
+    ordenacaoSelecionada.sort((a ,b) => {
+      if (a.release_date < b.release_date) {
+        return -1;
+      } else if (a.release_date > b.release_date) {
+        return 1;
+      } else {
+        return 0;
+      }  
+    });
+  } else { (value === "2023-1984") 
+    ordenacaoSelecionada.sort((a ,b) => {
+      if (a.release_date > b.release_date) {
+        return -1;
+      } else if (a.release_date < b.release_date) {
+        return 1;
+      } else {
+        return 0;
+      } 
+    }); 
+  }
+  return ordenacaoSelecionada;
+} 
 
-export const example = () => {
-  return 'example';
-};
+function filtroDiretor(listaDeFilmes, filtroSelecionado){
+  return listaDeFilmes.filter(filme => filtroSelecionado === filme.director);
+}
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+function calculoAgregado(listaDeFilmes, filtroAlterado) {
+  const totalDeFilmes = listaDeFilmes.length; 
+  const totalPorDiretor = filtroAlterado.length; 
+  const calculo = (totalPorDiretor*100)/totalDeFilmes; 
+  return calculo;
+}
+
+export{mostrarPosterOrdenado, filtroDiretor, calculoAgregado}

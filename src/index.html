@@ -2,11 +2,62 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Studio Ghibli</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <img class="logo" src="img/logo-peq.png" alt="logo-pequeno">
+      </div>
+      <div class="filmografia">
+        <h1 id="filmografia">FILMOGRAFIA</h1>
+      </div>
+      <!-- <div class="resultadoCalculo">
+        <h2 id="resultadoCalculo"></h2>
+      </div> -->
+      <nav class="containerCabecalho">
+        <ol class="cabecalhoBotoes">
+          <li class="sobre"><button id="botaoSobre">SOBRE</button></li>
+          <li class="home"><button id="botaoHome">HOME</button></li>
+        </ol>
+      </nav>
+    </header>
+      <nav class="ordem-filtro-container">
+        <select id="ordenacaoSelecionada" class="ordenacao">
+          <option>Ordenar</option>
+          <option class="crescente" value="1984-2023">1984-2023</option>
+          <option class= "decrescente" value="2023-1984">2023-1984</option>
+        </select>
+        <select id="filtro" class="filtro">
+          <option value="Filtro">Filtrar por Diretor</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Yoshifumi Kondo">Yoshifumi Kondo</option>
+          <option value="Goro Miyazaki">Goro Miyazaki</option>
+          <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+          <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+        </select>
+      </nav>
+      <!-- <dialog>
+        <h2 id="tituloFilme"></h2>
+        <p id="sinopse"></p>
+        <p id="dataDeLancamento"></p>
+        <p id="diretor"></p>
+        <p id="nota"></p>
+        <button id="fechar">Fechar</button>
+      </dialog> -->
+      <div class="caixaResultado">
+        <h4 id="resultadoCalculo"></h4>
+      </div>
+      <main>
+        <div class="filmesContainer">
+        </div>
+      </main>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
+  <footer>
+  </footer>
 </html>
