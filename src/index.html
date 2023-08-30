@@ -14,21 +14,17 @@
       <div class="filmografia">
         <h1 id="filmografia">FILMOGRAFIA</h1>
       </div>
-      <!-- <div class="resultadoCalculo">
-        <h2 id="resultadoCalculo"></h2>
-      </div> -->
       <nav class="containerCabecalho">
-        <ol class="cabecalhoBotoes">
-          <li class="sobre"><button id="botaoSobre">SOBRE</button></li>
-          <li class="home"><button id="botaoHome">HOME</button></li>
+        <ol class="cabecalhoBotao">
+          <li class="limpar"><button id="botaoLimpar" onclick="window.location.href='index.html'">LIMPAR</button></li>
         </ol>
       </nav>
     </header>
       <nav class="ordem-filtro-container">
         <select id="ordenacaoSelecionada" class="ordenacao">
-          <option>Ordenar</option>
-          <option class="crescente" value="1984-2023">1984-2023</option>
-          <option class= "decrescente" value="2023-1984">2023-1984</option>
+          <option>Ordenar Filmes por ano de Lançamento</option>
+          <option class="crescente" value="crescente">Crescente</option>
+          <option class= "decrescente" value="decrescente">Decrescente</option>
         </select>
         <select id="filtro" class="filtro">
           <option value="Filtro">Filtrar por Diretor</option>
@@ -40,24 +36,19 @@
           <option value="Hiroyuki Morita">Hiroyuki Morita</option>
         </select>
       </nav>
-      <!-- <dialog>
-        <h2 id="tituloFilme"></h2>
-        <p id="sinopse"></p>
-        <p id="dataDeLancamento"></p>
-        <p id="diretor"></p>
-        <p id="nota"></p>
-        <button id="fechar">Fechar</button>
-      </dialog> -->
-      <div class="caixaResultado">
-        <h4 id="resultadoCalculo"></h4>
-      </div>
+      <section class="calculoContainer" id="calculoContainer">
+          <div class="testeCalculo">
+            <p id="resultadoCalculo"></p>
+          </div>
+      </section>
       <main>
         <div class="filmesContainer">
         </div>
       </main>
     <div id="root"></div>
+    <footer>
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
-  <footer>
-  </footer>
+  
 </html>

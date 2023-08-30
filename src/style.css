@@ -1,5 +1,11 @@
+* {
+    font-family: Helvetica;
+    font-weight: lighter;
+    color: #000000;
+}
+
 header {
-    background-color: #B4C2CD;
+    background-color: #b7cad9;
     display: flex;
     width: 100%;
 }
@@ -10,7 +16,7 @@ header {
     width: 75%;
 } 
 
-.cabecalhoBotoes {
+.cabecalhoBotao {
     margin-top: 10px;
     list-style: none;
     display: flex;
@@ -19,40 +25,32 @@ header {
 }
 
 .logo {
-    height: 210px;
+    height: 50%;
     width: 200px;
     padding: 5px;
+    margin-left: 10px;
 }
 
 #filmografia {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    margin-top: 180px;
-    margin-left: -60px;
-    display: flex;
-    align-items: flex-end;
-    font-size: 35px;
+    margin-top: 170px;
+    margin-left: -51px;
 }
 
-.sobre, .home {
-    margin-left: 10%;
+.limpar {
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
 }
 
-#botaoSobre, #botaoHome {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    font-size: 20px;
+#botaoLimpar {
+    font-size: 18px;
     background-color: #d5e0e8;
-    color: #000000;
-    padding: 15px 20px;
+    padding: 10px 15px;
     border-radius: 5px;
     border: none;
 }
 
-#botaoSobre:hover, #botaoHome:hover {
+#botaoLimpar:hover {
     background-color: #a8b5bd;
 }
 
@@ -64,41 +62,41 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* gap: 80px; */
-    margin: 50px;
+    gap: 10px;
+    margin: 10px;
 }
 
 .ordenacao, .filtro {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
     font-size: 20px;
     height: 30px;
-    margin: 10px;
     padding: 2px 2px 2px 15px;
     flex: 1 1 100px;
+    background-color: #d5e0e8;
 }
 
 .ordenacao:hover, .filtro:hover {
-    background-color: #c5cacd;
+    background-color: #a8b5bd;
 }
 
-.caixaResultado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
+.calculoContainer {
+    float: right;
+    display: none;
+    width: 320px;
     height: 100px;
     border-radius: 10px;
-    background-color: #b9c7d0;
+    padding: 10px;
+    margin-right: 20%;
+    background-color: #b7cad9;
 } 
 
-#resultadoCalculo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    font-size: 20px;
+.testeCalculo {
     display: flex;
-    justify-content: flex-end;
-    padding: 10px;
+    align-items: center;
+}
+
+#resultadoCalculo {
+    font-size: 24px;
+    padding: 10px 15px;
 }
 
 .filmesContainer {
@@ -110,13 +108,21 @@ body {
 }
 
 .filme-poster {
-    margin: 70px 20px 70px 20px;
+    margin: 50px 20px 50px 20px;
     width: 300px;
     height: 400px;
     box-sizing: border-box;
-    align-items: center;
+    align-items: center; 
 } 
 
+/* responsive */
+/* 
+@media screen and (max-width: 1024px) {
+    #botaoLimpar {
+        position:absolute;
+        right: 50px;
+    }
+} */
 
 @media screen and (max-width: 800px) {
     .resultadoCalculo {
@@ -130,13 +136,17 @@ body {
         font-size: 20px;
     }
 
-    #botaoSobre {
+    .containerCabecalho {
+        width: 50%;
+    }
+
+    #botaoLimpar {
         font-size: 15px;
         padding: 5px 10px;
     }
 
-    #botaoHome {
+    .ordenacao, .filtro {
         font-size: 15px;
-        padding: 5px 10px;
+        width: 20%;
     }
 }
