@@ -4,16 +4,14 @@ import studio from './data/ghibli/ghibli.js';
 
 const poster = document.querySelector(".filmesContainer"); // document.querySelector busca e seleciona primeira classe "filmesContainer" que aparecer no HTML e armazena na variavel poster 
 
-function mostraPoster(films) { // função mostraPoster(paramentro films(lá do ghibli.js))
+function mostraPoster(films) { // função mostraPoster(paramentro films (lá do ghibli.js))
   const posterFilme = document.createElement("img"); // document.createElement cria um elemento imagem e armazena na variavel posterFilme
   posterFilme.src = films.poster; // posterFilme.(dot - ponto acessa propriedades de objeto)busca o caminho da imagem, que no caso sera poster que esta dentro de films 
   posterFilme.classList.add("filme-poster"); //cria uma classList de nome "filme-poster"
   posterFilme.alt = "Ano:"+films.release_date; //cria um alt(mostrar no console, me ajudou na verificação da ordenazão )
   poster.appendChild(posterFilme); // 
-  return posterFilme; // retorna posterFilme 
-  
-} 
-console.log("mostrar imagens filmes");
+  return posterFilme; // retorna posterFilme
+}
 
 function limparTela(films) { // função limparTela(films)
   poster.innerHTML = "";  // remove o conteudo do elemento HTML 
@@ -22,8 +20,7 @@ function limparTela(films) { // função limparTela(films)
     const indice = studio.films.indexOf(film); // variavel indice recebe indice de um filme do array films que esta no studio 
     mostraPoster(film,indice); // mostraPoster com os parametros film e indice
   }
-} 
-console.log("limpa conteudo da tela");
+}
 
 for (let i = 0; i < studio.films.length; i++) { // loop que vai percorrer todos os filmes do array films que esta no studio 
   mostraPoster(studio.films[i], i);
@@ -44,20 +41,19 @@ const filtroSelecionado = document.getElementById("filtro"); // documento pega o
 
 // evento de ouvinte filtroSelecionado ^ (..linha 35)
 filtroSelecionado.addEventListener("change", function () { // quando um valor é alterado executa a função anonima, que esta no bloco \/ 
-  let filtroAlterado  = listaDeFilmes; //Se nenhum filtro for selecionado, vai mostrar a lista de filmes original
-
+  let filtroAlterado  = listaDeFilmes; // se nenhum filtro for selecionado, vai mostrar a lista de filmes original
+  console.log("clicou em um diretor");
   if (filtroSelecionado.value === "Filtro"){
     ordemFiltro = listaDeFilmes; // ordemFiltro recebe listaDeFilmes
     document.getElementById('calculoContainer').style.display = 'none'; //some janela com o calculo de filmes por diretor
   }else{
     filtroAlterado = filtroDiretor(listaDeFilmes, filtroSelecionado.value); // variavel filtroAlterado recebe filtroDiretor (linha 27 data) com os parametros listaDeFilmes e o valor de filtroSelecionado
     ordemFiltro = filtroAlterado; // ordemFiltro recebe filtroAlterado 
-    document.getElementById('calculoContainer').style.display = 'flex'; //mostra janela com o calculo de filmes por diretor
+    document.getElementById('calculoContainer').style.display = 'flex'; // mostra janela com o calculo de filmes por diretor
   }
 
   const resultado = calculoAgregado(listaDeFilmes, filtroAlterado); // variavel resultado recebe calculoAgregado (linha 31 data) com os parametros listaDeFilmes e filtroAlterado 
-  resultadoCalculo.textContent = `${resultado} % dos filmes do Studio Ghibli foram dirigidos por este diretor` // 
+  resultadoCalculo.textContent = `${resultado} % dos filmes do Studio Ghibli foram dirigidos por este diretor` 
   
   limparTela(filtroAlterado);
 });
-

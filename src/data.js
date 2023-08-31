@@ -9,8 +9,8 @@ function mostrarPosterOrdenado(value,listaDeFilmes) {
       } else {
         return 0;
       }  
-    });
-  }
+    });console.log("clicou crescente");
+  } 
   if (value === "decrescente") {
     ordenacaoSelecionada.sort((a ,b) => {
       if (a.release_date > b.release_date) {
@@ -20,14 +20,14 @@ function mostrarPosterOrdenado(value,listaDeFilmes) {
       } else {
         return 0;
       } 
-    }); 
+    }); console.log("clicou decrescente");
   }
   return ordenacaoSelecionada;
 } 
 
 function filtroDiretor(listaDeFilmes, filtroSelecionado) {
-  return listaDeFilmes.filter(filme => filtroSelecionado === filme.director);
-}
+  return listaDeFilmes.filter(filme => filtroSelecionado === filme.director); 
+} 
 
 function calculoAgregado(listaDeFilmes, filtroAlterado) {
   const totalDeFilmes = listaDeFilmes.length;
